@@ -108,6 +108,12 @@ const API_SITES = {
         name: '黄色仓库',
         adult: true,
         detail: 'https://hsckzy.vip' // 添加detail URL以便特殊处理
+    },
+    jable: {
+    api: 'https://jable.tv',
+    name: 'Jable',
+    adult: true,
+    detail: 'https://jable.tv'
     }
 };
 
