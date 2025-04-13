@@ -39,6 +39,10 @@ const API_SITES = {
         api: 'https://360zy.com',
         name: '360资源',
     },
+    feifan: {
+        api: 'http://api.ffzyapi.com',
+        name: '非凡',
+    },
     wolong: {
         api: 'https://wolongzyw.com',
         name: '卧龙资源',
