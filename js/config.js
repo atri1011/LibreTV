@@ -76,18 +76,22 @@ const API_SITES = {
     jkun: {
         api: 'https://jkunzyapi.com',
         name: 'jkun资源',
+        adult: true,
     },
     bwzy: {
         api: 'https://api.bwzym3u8.com',
         name: '百万资源',
+        adult: true,
     },
     souav: {
         api: 'https://api.souavzy.vip',
         name: 'souav资源',
+        adult: true,
     },
     siwa: {
         api: 'https://siwazyw.tv',
         name: '丝袜资源',
+        adult: true,
     },
     r155: {
         api: 'https://155api.com',
