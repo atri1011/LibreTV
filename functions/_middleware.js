@@ -109,15 +109,81 @@ function showLoginPage(requestUrl, errorMessage = '') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>访问验证</title>
     <style>
-      body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #222; color: #eee; margin: 0; }
-      .login-container { background-color: #333; padding: 2rem 3rem; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); text-align: center; width: 90%; max-width: 400px; }
-      h2 { color: #00ccff; margin-bottom: 1.5rem; }
-      input[type="password"] { padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #555; border-radius: 4px; width: calc(100% - 1.6rem); background-color: #444; color: #eee; font-size: 1rem; }
-      input[type="password"]:focus { outline: none; border-color: #00ccff; box-shadow: 0 0 5px rgba(0, 204, 255, 0.5); }
-      button { padding: 0.8rem 1.5rem; background: linear-gradient(to right, #00aaff, #00ccff); color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; font-weight: bold; transition: all 0.3s ease; }
-      button:hover { opacity: 0.9; box-shadow: 0 3px 10px rgba(0, 204, 255, 0.4); }
-      .error { color: #ff6666; margin-bottom: 1rem; font-size: 0.9rem; }
-      form { margin-top: 1rem; }
+      body { 
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+        min-height: 100vh; 
+        margin: 0; 
+        color: #f5f5f7;
+        background: linear-gradient(to bottom, #000000, #1a1a1a, #2c2c2c);
+        background-attachment: fixed;
+      }
+      .login-container { 
+        background: rgba(30, 30, 30, 0.8);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        padding: 2.5rem 3rem; 
+        border-radius: 18px; 
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); 
+        text-align: center; 
+        width: 90%; 
+        max-width: 400px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      h2 { 
+        color: #fff; 
+        margin-bottom: 1.5rem;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+      }
+      input[type="password"] { 
+        padding: 0.8rem; 
+        margin-bottom: 1.5rem; 
+        border: none; 
+        border-radius: 8px; 
+        width: calc(100% - 1.6rem); 
+        background-color: rgba(60, 60, 60, 0.6); 
+        color: #fff; 
+        font-size: 1rem;
+        transition: all 0.3s ease;
+      }
+      input[type="password"]:focus { 
+        outline: none; 
+        background-color: rgba(70, 70, 70, 0.8);
+        box-shadow: 0 0 0 2px rgba(0, 125, 250, 0.6); 
+      }
+      button { 
+        padding: 0.8rem 0; 
+        width: 100%;
+        background: linear-gradient(to right, #0071e3, #2b8eff); 
+        color: white; 
+        border: none; 
+        border-radius: 8px; 
+        cursor: pointer; 
+        font-size: 1rem; 
+        font-weight: 500; 
+        transition: all 0.3s ease;
+        letter-spacing: 0.5px;
+      }
+      button:hover { 
+        opacity: 0.9; 
+        transform: translateY(-1px);
+        box-shadow: 0 5px 15px rgba(0, 113, 227, 0.4); 
+      }
+      button:active {
+        transform: translateY(1px);
+      }
+      .error { 
+        color: #ff6b6b; 
+        margin-bottom: 1.2rem; 
+        font-size: 0.9rem;
+        background-color: rgba(255, 0, 0, 0.1);
+        padding: 0.5rem;
+        border-radius: 6px;
+      }
+      form { margin-top: 1.5rem; }
     </style>
   </head>
   <body>
@@ -126,7 +192,6 @@ function showLoginPage(requestUrl, errorMessage = '') {
       ${errorMessage ? `<p class="error">${errorMessage}</p>` : ''}
       <form method="POST" action="${LOGIN_PATH}?redirect=${encodedRedirect}">
         <input type="password" name="password" placeholder="密码" required autofocus>
-        <br>
         <button type="submit">验 证</button>
       </form>
     </div>
